@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <title>Calculadora</title>
+    
+</head>
+<body>
+    <br>
+    <div class="ui teal inverted container segment">
+        <h4 class="ui dividing header">Calculadora</h4><br>
+        <section class="ui form" class="ui form">
+            <div class="field">
+                <label>Número 1</label>
+                <input type="text" id="numero1" placeholder="Ingrese un numero">
+            </div>
+        </section>
+        <section class="ui form">
+            <div class="field">
+                <label>Número 2</label>
+                <input type="text" id="numero2" placeholder="Ingrese un numero">
+            </div>
+        </section>
+        <section class="ui form">
+            <div class="field">
+                <section id="resultado">
+                    <p>Resultado: </p>
+                </section>
+            </div>
+        </section>
+        <section class="ui form">
+            <div class="field">
+                <div class="ui grid">
+                    <div class="five wide column"></div>
+                    <div class="four wide column">
+                        <div class="ui small basic icon buttons">
+                            <button class="ui button"><i class="plus icon"></i></button>
+                            <button class="ui button"><i class="minus icon"></i></button>
+                            <button class="ui button"><i class="times icon"></i></button>
+                            <button class="ui button"><i class="percent icon"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui bottom attached red button" tabindex="0">Limpiar</div>
+        </section>
+
+
+    </div>
+
+
+    <script>
+        const contenedor = document.querySelector('#resultado');
+        const numero1 = document.querySelector('#numero1');
+        const numero2 = document.querySelector('#numero2');
+        const limpiar = document.querySelector('.red.button');
+        const suma = document.querySelector('.plus');
+        const resta = document.querySelector('.minus');
+        const multiplicacion = document.querySelector('.times');
+        const division = document.querySelector('.percent');
+        const resultado = document.createElement('span');
+        
+        limpiar.addEventListener("click", (event) => {
+            numero1.value = "";
+            numero2.value = "";
+        })
+
+        suma.addEventListener("click", function(event) {
+            resultado.textContent = parseFloat(numero1.value) + parseFloat(numero2.value);
+            contenedor.appendChild(resultado);
+        });
+        resta.addEventListener("click", function(event) {
+            resultado.textContent = parseFloat(numero1.value) - parseFloat(numero2.value);
+            contenedor.appendChild(resultado);
+        });
+        multiplicacion.addEventListener("click", function(event) {
+            resultado.textContent = parseFloat(numero1.value) * parseFloat(numero2.value);
+            contenedor.appendChild(resultado);
+        });
+        division.addEventListener("click", function(event) {
+            resultado.textContent = parseFloat(numero1.value) / parseFloat(numero2.value);
+            contenedor.appendChild(resultado);
+        });
+
+    </script>
+</body>
+</html>

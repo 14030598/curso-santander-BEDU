@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    
+    <title>Sesion 10</title>
+</head>
+<body>
+    <div class="ui pointing menu">
+        <a class="item active" href="">
+            Index
+        </a>
+        <a class="item" href="sesion2.html">
+            Sesion 2
+        </a>
+        <a class="item" href="sesion3.html">
+            Sesion 3
+        </a>
+        <a class="item" href="sesion4.html">
+            Sesion 4
+        </a>
+        <a class="item" href="postwork4.html">
+            Postwork 4
+        </a>
+        <a class="item" href="sesion5.html">
+            Sesion 5
+        </a>
+        <a class="item" href="sesion6.html">
+            Sesion 6
+        </a>
+        <a class="item" href="sesion7.html">
+            Sesion 7
+        </a>
+        <a class="item" href="sesion8.html">
+            Sesion 8
+        </a>
+        <a class="item" href="sesion9.html">
+            Sesion 9
+        </a>
+        <a class="item" href="sesion10.html">
+            Sesion 10
+        </a>
+        <a class="item" href="sesion11.html">
+            Sesion 11
+        </a>
+        <a class="item" href="sesion12.html">
+            Sesion 12
+        </a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui transparent icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- REto 1 -->
+    <div class="ui center aligned container">
+        <h1>Infla el globo </h1>
+        <p>🎈</p>
+    </div>
+    
+
+    <script>
+        const globo = document.querySelector('p');
+        let aire = 20;
+
+        const inflar = (event) => {
+            if (event.key == "ArrowUp") {
+                if(aire < 80){
+                    aire += 20;
+                    globo.style.fontSize = aire +"px";
+                }
+                if (aire == 80) {
+                    globo.textContent = "💥";
+                    window.removeEventListener("keydown", inflar);
+                }
+            }
+            if (event.key == "ArrowDown") {
+                if(aire > 20){
+                    aire -= 20;
+                    globo.style.fontSize = aire+"px";
+                }
+                
+            }
+        };
+
+        window.addEventListener("keydown", inflar);
+
+    </script>
+
+    <!-- REto 2 -->
+
+    <style>
+        #modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          padding-top: 100px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(0, 0, 0, 0.9);
+        }
+      
+        .modal-content {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+        }
+      
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+      
+        .close:hover,
+        .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
+    </style>
+
+    <div class="ui right aligned container">
+        <h1>Modal</h1>
+
+        <button class="ui button">Open modal</button>
+
+        <div id="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image"/>
+        </div>
+    </div>
+    
+
+    <script>
+        const boton = document.querySelector('button');
+        const modal = document.querySelector('#modal');
+        const imagen = document.querySelector('#modal-image');
+        const cerrar = document.querySelector('.close');
+
+        boton.addEventListener('click', function (event) {
+            imagen.src = "https://picsum.photos/300/200";
+            modal.style.display = "block";
+            
+        });
+
+        cerrar.addEventListener("click", function (event) {
+            modal.style.display = "none";
+        });
+    </script>
+
+
+    <!-- RETO 3 -->
+    <div class="ui container">
+        <!-- otro div -->
+        <div id="tab-panel">
+            <div data-tabname="First">Tab one</div>
+            <div data-tabname="Second">Tab two</div>
+            <div data-tabname="Third">Tab three</div>
+        </div>
+    </div>
+    
+    <script>
+
+        const nodos = document.querySelector("#tab-panel"); // obtine los nodos div
+        function createTabs(node) {
+            const tabs = Array.from(node.children).map(function (node) {
+                const boton = document.createElement("button");
+                boton.className = "ui button";
+                boton.textContent = node.getAttribute("data-tabname");
+                const tab = {
+                    node: node,
+                    boton: boton
+                };
+                boton.addEventListener("click", () => selectTab(tab));
+
+                return tab;
+            });//fin de map
+
+            const botonera = document.createElement("div");
+            for (const tab of tabs)
+                botonera.appendChild(tab.boton)
+            
+            node.insertBefore(botonera, node.firstChild);
+            function selectTab(TabSelected) {
+                for (const tab of tabs) {
+                    const selected = tab === TabSelected;
+                    tab.node.style.display = selected ? "" : "none";
+                    tab.boton.className = selected ? "ui primary button" : "ui button";
+                }
+            }
+            selectTab(tabs[0]);
+        }
+        createTabs(nodos);
+
+        
+    </script>
+
+</body>
+</html>

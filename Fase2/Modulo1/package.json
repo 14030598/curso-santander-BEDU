@@ -1,0 +1,23 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "### Sesión 3: Objetos y Arreglos - **Arreglos** - **Objetos** - **Spread operator**     - *const copyOfBook = { ...book };* `for of no se puede usar en objetos`",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node .\\node_modules\\sass\\sass.js --watch .\\recursos\\sass\\sass.scss recursos/css/estilo.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/14030598/santander-backend-js.git"
+  },
+  "author": "Luis Manuel Tapia Bautista",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/14030598/santander-backend-js/issues"
+  },
+  "homepage": "https://github.com/14030598/santander-backend-js#readme",
+  "dependencies": {
+    "sass": "^1.37.0"
+  }
+}

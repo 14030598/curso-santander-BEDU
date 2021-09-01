@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+      <title>Reto 1: Reemplazar Imágenes</title>
+  </head>
+  <body>
+    <div class="ui pointing menu">
+        <a class="item active" href="">
+            Index
+        </a>
+        <a class="item" href="sesion2.html">
+            Sesion 2
+        </a>
+        <a class="item" href="sesion3.html">
+            Sesion 3
+        </a>
+        <a class="item" href="sesion4.html">
+            Sesion 4
+        </a>
+        <a class="item" href="postwork4.html">
+            Postwork 4
+        </a>
+        <a class="item" href="sesion5.html">
+            Sesion 5
+        </a>
+        <a class="item" href="sesion6.html">
+            Sesion 6
+        </a>
+        <a class="item" href="sesion7.html">
+            Sesion 7
+        </a>
+        <a class="item" href="sesion8.html">
+            Sesion 8
+        </a>
+        <a class="item" href="sesion9.html">
+            Sesion 9
+        </a>
+        <a class="item" href="sesion10.html">
+            Sesion 10
+        </a>
+        <a class="item" href="sesion11.html">
+            Sesion 11
+        </a>
+        <a class="item" href="sesion12.html">
+            Sesion 12
+        </a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui transparent icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- RETO 1 -->
+      <h1>Images</h1>
+
+      <img src="https://picsum.photos/200/300" alt="First Image"/>
+      <img src="https://picsum.photos/200/300" alt="Second Image"/>
+      <img src="https://picsum.photos/200/300" alt="Third Image"/>
+      <br>
+      <button onclick="reemplazar()">Reemplazar</button>
+      <script>
+          const reemplazar = () => {
+              const imagenes = document.querySelectorAll('img');
+              for (const imagen of imagenes) 
+                  imagen.parentNode.replaceChild(document.createTextNode(imagen.alt), imagen); //parentNode lleva al padre a reemplazar porque image no tiene hijos
+          };
+      </script>
+
+      <!-- RETO 2 -->
+      <h1>Mountains</h1>
+
+      <div id="mountains" class="ui container"></div>
+      <br><br><br>
+      <script>
+          const data = [
+              {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+              {name: "Everest", height: 8848, place: "Nepal"},
+              {name: "Mount Fuji", height: 3776, place: "Japan"},
+              {name: "Vaalserberg", height: 323, place: "Netherlands"},
+              {name: "Denali", height: 6168, place: "United States"},
+              {name: "Popocatepetl", height: 5465, place: "Mexico"},
+              {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+          ];
+        // Code goes here
+        const donde_voy_a_poner_DIJE = document.querySelector('#mountains')
+        const tabla = document.createElement('table');
+        tabla.className = 'ui celled table';
+        const encabezados = Object.keys(data[1]);
+
+        function hacerfila(array, etiqueta) {
+            const fila = document.createElement('tr');
+            array.forEach(element => {
+                const columnas = document.createElement(etiqueta);
+                const contenido = document.createTextNode(element);
+                if (typeof element == 'number' )
+                    columnas.style.textAlign = "right";
+                columnas.appendChild(contenido);
+                fila.appendChild(columnas);
+            });
+            return fila;
+        }
+        tabla.appendChild(hacerfila(encabezados,'th'));
+        data.forEach(element => {
+            const cuerpo = Object.values(element);
+            tabla.appendChild(hacerfila(cuerpo, 'td'));
+        });
+        donde_voy_a_poner_DIJE.appendChild(tabla)
+      </script>
+
+  </body>
+</html>
+

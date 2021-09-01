@@ -1,0 +1,182 @@
+body{
+    margin: 10px;
+    background-color: #1d467e;
+    background-image: url(fondo.jpg);
+    background-attachment: fixed;
+    color: white;
+}
+.mi_menu{
+    display: flex;
+    justify-content: center;
+}
+.items{
+    display: inline-block;
+    list-style: none;
+}
+.items > a{
+    margin: 5px 10px 5px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 5px;
+    font-size: 20px;
+    color: #fff;
+}
+.items > a:hover{
+    background-color: #B2D5DA;
+    color: #043A41;
+    border-radius: 5px;
+}
+.active > a{
+    background-color: #B2D5DA;
+    border-radius: 5px;
+    color: #043A41;
+}
+.card{
+    background-color: #e4e4e4;
+    padding: 10px;
+    color: #7c8484;
+}
+.ejemplos{
+    /* display: none; */
+}
+.retos{
+    /* display: none; */
+    background-color: #1d467e;
+    padding-left: 50px;
+}
+.cursiva{
+    margin: 0px 2px;
+    padding: 5px;
+    border-radius: 5px;
+    line-height: 30px;
+    background-color: #696e6e;
+    color: #fff;
+}
+.codigo{
+    margin: 0px 25px;
+    border-radius: 5px;
+    background-color: #696e6e;
+    color: #fff;
+}
+
+/*Seccion 1*/
+.publish button{
+    outline: none;
+    border: 0px;
+    border-radius: 0px 10px 10px 0px;
+    margin: 5px;
+    padding: 20px;
+    background-color: #025157;
+    color: #FFFFFF;
+}
+button:hover{
+    background-color: #025157;
+    color: #eee;
+}
+
+
+
+/* Seccion 3 */
+.publish{
+    /**/
+}
+.publish h3{
+    font-family: "Alegreya", serif;
+    font-size: 40px;
+    line-height: 40px;
+    color: #025157;
+}
+.publish > p{
+    font-size: 16px;
+    color: #343434;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.publish > form{
+    display: flex;
+}
+.publish > form p{
+    color: #025157;
+    margin-right: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Postwork */
+.seccion3{
+    background-color: #a1d683;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 75px;
+}
+.izquierda {
+    /* width: 60%; */
+    margin: auto 75px auto 75px;
+    /* padding-right: 75px; */
+    border: 2px solid red;
+}
+.seccion3 h1{
+    font-family: "Alegreya", serif;
+    font-size: 40px;
+    line-height: 40px;
+    color: #025157;
+}
+.seccion3 p{
+    color: #000;
+}
+.tarjeta {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 2px solid red;
+    margin: 40px 0 60px 0;
+}
+.tarjeta button{
+    width: 100%;
+}
+.cuerpo{
+    padding: 20px;
+}
+.cuerpo h5{
+    color: #025157;
+}
+.cuerpo h3{
+    color: #000;
+}
+.cuerpo p{
+    color: rgb(110, 108, 108);
+}
+.seccion3 button{
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+    /* margin: 5px; */
+    padding: 15px 20px 15px 20px;
+    background-color: #025157;
+    color: #FFFFFF;
+}

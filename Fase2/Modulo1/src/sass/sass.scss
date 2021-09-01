@@ -1,0 +1,53 @@
+@use 'global' as *;
+
+body{
+    @include fondo;
+    margin-top: 50px
+    // background-color: $color-fondo-cafe;
+}
+.ui.menu{
+    @include menu;
+    .item, .item.active{
+        color: $color-texto;
+    }
+    a.item:hover:not(.active){
+        background-color: $color-texto;
+        color: $color-naranja;
+    }
+}
+
+.tarjetas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer{
+    @include footer;
+    .autores{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .card-integrante{
+            width: 300px;
+            height: 300px;
+            background-color: $color-verde;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            .foto{
+                background-color: $color-verde;
+                width: 100px;
+                height: 100px;
+                border-radius: 50% 50%;
+                margin-top: -50px;
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 100px;
+                    height: 100px;
+                    // border-radius: 50% 50%;
+                }
+            }
+        }
+    }
+    
+}

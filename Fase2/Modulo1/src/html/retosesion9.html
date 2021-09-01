@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+      .container {
+         height: 500px;
+         margin: 100px auto;
+         width: 500px;
+      }
+
+      .cell {
+         background-color: #2980b9;
+         background-size: contain;
+         border: 1px solid white;
+         box-sizing: border-box;
+         float: left;
+         height: 10%;
+         width: 10%;
+      }
+
+      .active {
+         background-color: #e67e22;
+      }
+
+      .active-head {
+         background-color: #e74c3c;
+      }
+   </style>
+   <title></title>
+</head>
+
+<body>
+   <div class="container"></div>
+
+   <script>
+      const container = document.querySelector('.container');
+      const getAleatorio = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+      const aleatorio = getAleatorio(0,10);
+      for (let filas = 0; filas < 10; filas++) {
+         for (let columnas = 0; columnas < 10; columnas++) {
+            const celda = document.createElement('div');
+            container.appendChild(celda);
+            const clase = (aleatorio == filas) ? 'cell fila' : 'cell' ;
+            celda.className = clase;
+         }
+      }
+      const divs = container.querySelectorAll('.cell.fila');
+      function recorrido() {
+         let columna = 0, serpiente = 0;
+         setInterval( function() {
+            if(columna < divs.length+4){  // camina en la fila y el 4 es el tamaño de la serpiente
+               if (divs[columna-1] != undefined && divs[columna] != undefined) {
+                  divs[columna].className = "cell active-head";
+                  divs[columna].previousSibling.className = "cell active";
+                  serpiente++;
+                  if (serpiente >= 4)
+                     divs[columna-4].className = "cell";
+               }else{
+                  if (columna == 10) {divs[columna-1].className = "cell active";divs[columna-4].className = "cell";}
+                  if (columna >= 9)
+                     divs[columna-4].className = "cell";
+               }
+            }//fin camina en la fila
+            columna++;
+         }, 400);
+      }
+      setInterval(recorrido, 5200);
+      
+   </script>
+</body>
+
+</html>

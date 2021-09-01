@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="S3.css">
+    <title>Matcha</title>
+    <div class="">
+        <nav class="mi_menu">
+            <ul>
+                <li class="items"><a href="matcha/index.html">Matcha</a></li>
+                <li class="items" ><a href="S1.html">Sesion 1</a></li>
+                <li class="items"><a href="S2.html">Sesion 2</a></li>
+                <li class="items active"><a href="S3.html">Sesion 3</a></li>
+                <li class="items"><a href="S4.html">Sesion 4</a></li>
+                <li class="items"><a href="S5.html">Sesion 5</a></li>
+                <li class="items"><a href="S6.html">Sesion 6</a></li>
+                <li class="items"><a href="S7.html">Sesion 7</a></li>
+                <li class="items"><a href="S8.html">Sesion 8</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+</head>
+<body>
+    <h1>Ejemplos y retos</h1>
+    <div class="card">
+        <div class="ejemplos">
+            <h2>Ej. 01 - Creando nuestras rams para versiones de nuestro proyecto</h2>
+            <ol>
+                <li>Escribimos <i class="cursiva">git branch</i>  para saber en que rama estoy y cuantas ramas tengo</li>
+                <li>Escribimos <i class="cursiva">git branch [Nombre de rama]</i>  para crear nuestras.</li>
+                <li>Escribimos <i class="cursiva">git checkout [Nombre de la rama]</i> para cambiarnos de rama.</li>
+            </ol>
+
+            Escribiremos <i class="cursiva">git fetch</i> para traer los cambios que se realizaron desde otro ordenador, ya sea cambios que tu hiciste o que alguien te mandó un Pull Request y terminaste aceptando.
+            <pre>
+                <i class="cursiva">$ git fetch</i>
+            </pre>
+            Ahora que ya tenemos nuestros cambios en nuestra computadora, aun estos no se verán reflejados en nuestro código, esto debido a que git fetch solo se encarga de descargar los cambios. Para poder juntar los cambios descargados con lo que nosotros tenemos en nuestro proyecto se usa git merge, checa el ejemplo:
+            <pre>
+                # En este caso queremos combinar los cambios que se hicieron a la rama master.
+                # Si tu quisieras obtener cambios de otra rama, podrías cambiar `master` por
+                # la rama que desees.
+                <i class="cursiva">$ git merge origin/master</i>
+            </pre>
+        </div>
+        <div class="retos">
+            <h2>Reto 01 - Creando nuestras ramas</h2>
+            
+            INSTRUCCIONES
+            <ol>
+                <li>Crea una rama que se llame develop</li>
+                <li>De la rama develop crea una rama que llamaremos <i class="cursiva">task/001/changeBckcolor</i></li>
+                <li>Cambia el color de tu <i class="cursiva">background-color</i> del proyecto de la sesión anterior</li>
+                <li>Sube los cambios a github de esta rama</li>
+                <li>Jala los cambios con <i class="cursiva">git pull</i> de la rama <i class="cursiva">task/001/changeBkcolor</i> a develop</li>
+                <li>Sube tus cambios a Github</li>
+            </ol>
+            
+        </div>
+        <div class="ejemplos">
+            <h2>Ej. 02 - Agregando la etiqueta video de HTML5</h2>
+
+            <pre class="codigo">
+                &lt;body&gt;
+                &lt;!-- Contenido previo --&gt;
+                &lt;!-- ... --&gt;
+
+                &lt;!-- Contenedor de video --&gt;
+                &lt;section&gt;
+                    &lt;video src="https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.mp4"&gt;&lt;/video&gt;
+                &lt;/section&gt;
+                &lt;/body&gt;
+            </pre>
+            para indicar a la etiqueta el video se puede usar de dos maneras
+            <ol>
+                <li>src</li>
+                <li>&lt;source /&gt;</li>
+            </ol>
+        </div>
+        <div class="retos">
+            <h2>Reto 2.1 - Agregando controles de reproducción al video</h2>
+                Resulta que por defecto el navegador no agrega controles de reproducción al video, 
+                <b>¿puedes buscar cómo agregárselo?</b> <u>R: atributo=controls</u>
+            <h2>Reto 2.2 - Agregando la portada del video</h2>
+                Bien, nuestro videos ya cuenta con controles de reproducción, además soporta más de un formato para optimizar 
+                la experiencia de nuestros usuarios. Sin embargo, sería genial poder definir la imagen que queremos que se vea 
+                antes de que se reproduzca el video. <b>¿Nos ayudas a agregar esta funcionalidad?</b> <u>R: cambiar src poner la imagen y los videos con source</u>
+
+        </div>
+        <div class="ejemplos">
+            <h2>Ej. 03 - Agregando múltiples formatos de video</h2>
+            <pre class="codigo">
+                &lt;body&gt;
+                    &lt;!-- Contenido previo --&gt;
+                    &lt;!-- ... --&gt;
+    
+                    &lt;!-- Contenedor de video --&gt;
+                    &lt;section&gt;
+                        &lt;video controls&gt;
+                            &lt;source type="video/webm" src="https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.webm"/&gt;
+                            &lt;source type="video/mp4" src="https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.mp4"/&gt;
+                        &lt;/video&gt;
+                    &lt;/section&gt;
+                &lt;/body&gt;
+            </pre>
+                
+        </div>
+        <div class="retos">
+            <h2>Reto 03 - Agrega la sección de publicidad</h2>
+
+
+            NSTRUCCIONES <br>
+            Ya tenemos el video en nuestra página, ahora, si revisamos la web de Matcha, nos vamos a dar cuenta que tiene un texto publicitario junto con un formulario similar al que utilizamos en la parte de inicio, el reto consiste en que lo puedas agregar, aun no es necesario alinearlo, no hay problema que todo se vea debajo, no intentes usar el <i class="cursiva">display: inline-block</i> de la sesión anterior, puesto que estaremos usando otra manera más adelante.
+            <br>
+            TIP: Ya que tienes que agregar un encabezado, seguido de un párrafo y un formulario, te recomendamos envolver todos estos elementos en un contenedor (idealmente semántico).
+
+
+            Ten en cuenta lo siguiente:
+            <ul>
+                <li>Usa la fuente que deseas para el encabezado de la sección</li>
+                <li>El color de fuente del encabezado y del texto que precede al formulario es <i class="cursiva">#025157</i></li>
+                <li>El color de fuente del párrafo es <i class="cursiva">#343434</i></li>
+                <li>Dependiendo del selector que usaste, ¿cómo reutilizarías tus estilos del formulario de la parte inicial para este nuevo formulario muy similar?</li>
+            </ul>
+        </div>
+        <div class="ejemplos">
+            <h2>Ej. 04 - Alineamiento horizontal con flexbox</h2>
+
+            <pre class="codigo">
+                &lt;!-- Contenedor --&gt;
+                &lt;section class="promo"&gt;
+                    &lt;!-- Video --&gt;
+                    &lt;video&gt;&lt;/video&gt;
+                    &lt;!-- Contenido de publicidad --&gt;
+                    &lt;article&gt;&lt;/article&gt;
+                &lt;/section&gt;
+
+                .promo {
+                    display: flex;
+                    width: 70%;
+                    margin: 100px auto;
+                    align-items: center;
+                }
+            </pre>
+        </div>
+        <div class="retos">    
+            <h2>Reto 04 - Agregando contenedor al video para agregar imagen</h2>
+
+            INSTRUCCIONES <br>
+            ¿Te diste cuenta que hay una imagen debajo del video que no hemos agregado ni considerado? ¿Cómo va a afectar esto lo que llevamos actualmente? Bien, es tu momento de aplicar Flexbox por tu cuenta, vas a necesitar meter el video dentro de un contenedor para que luego puedas agregar la imagen debajo y puedas alinearlos con Flexbox.
+            La imagen lo puedes encontrar aquí.
+            <img src="matcha/see_how_it_works.png" alt="Imagen no encontrada">
+            <br>
+            TIP: Como la imagen irá debajo del video, el contenedor debe de cambiar la dirección de los elementos a column.
+            <br>
+            No olvides subir tus cambios a Github y revisar que se vean los cambios reflejados en tu página alojada en GitHub Pages.
+
+        </div>
+        <div class="ejemplos">
+            <h2>Ej. 05 - Aplicando position:fixed</h2>
+            <pre class="codigo">
+                &lt;body&gt;
+                    &lt;!-- Este es el contenedor que envuelve a la barra de navegación --&gt;
+                    &lt;section class="fixed-header"&gt;
+                      &lt;header class="header"&gt;&lt;/header&gt;
+                    &lt;/section&gt;
+                    &lt;!-- HTML restante --&gt;
+                    &lt;!-- ... --&gt;
+                &lt;/body&gt;
+                  
+                  
+                .fixed-header {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                }
+                  
+                .fixed-header {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: #fffbf7; /*agregado*/
+                }
+                  
+                main {
+                    margin-top: 285px;
+                    text-align: center;
+                }
+            </pre>
+        </div>
+        <div class="postwork">
+            <h2>Postwork</h2>
+            Objetivos
+            <ul>
+                <li>Profundizar en Flexbox</li>
+            </ul>
+            Recursos <br>
+            El objetivo será agregar esta sección usando Flexbox: <br>
+            
+            El color de fondo que usa esta sección es <i class="cursiva">#a1d683</i>, no te preocupes si no tienes idea de cómo realizar el efecto de que el fondo parezca que tiene una apariencia con bordes redondeados, no es el objetivo aun. Enfócate en que puedas acomodar el contenido alineado correctamente tanto de forma vertical y horizontal.
+            <br>
+            El slider de casos de estudio que aparece a la derecha tampoco es necesario implementar, escoge uno de los casos e implementa solo uno, no te enfoques en darle el efecto de que cambien solo, puedes obviar los 3 puntos que salen debajo de cada caso de estudio si deseas también.
+            <br>
+            Utiliza las herramientas de desarrollo del navegador para obtener los colores y links de imágenes por si quieres evitarte el buscar tus propios recursos. Revisa el siguiente elace si tienes dudas de cómo hacerlo:
+            <br>
+            Google Developers - Inspecciona y edita páginas y estilos
+            <br>
+            Usa <i class="cursiva">position: absolute y position: relative</i> para ubicar el logo de la empresa en el caso de estudio en la posición que se muestra (entre la imagen de la persona y el contenedor del texto que le sigue).
+            <br>
+            Y si quieres un resumen (aunque en inglés) de Flexbox, este artículo está genial y te puede ayudar a entender mejor lo visto en clase y poder aplicarlo en este postwork.
+            
+        </div>
+    </div>
+    <br>
+
+
+    <!-- ********************************    CLASE ********************************************************** -->
+
+
+    <br>
+    <h1>Clase S3</h1>
+    <div class="card">
+        <section>
+            <!-- src pone la portada y los videos se especifican con source RETO 2-->
+            <video controls poster="https://cdn.videvo.net/videvo_files/video/premium/video0036/thumbails/computer_code00_small.jpg">
+                <source type="video/webm" src="https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.webm" />
+                <source type="video/mp4" src="https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.mp4" />
+            </video>
+            <!--  -->
+            <article class="publish">
+                <h3>Publish to your blog </h3>
+                <p>
+                    Your blog is your
+                </p>
+                <form action="">
+                    <p>Start publishing today:</p>
+                    <div>
+                        <input type="text" placeholder="Enter email"/>
+                        <button>Start My trial</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="seccion3">
+        <div class="izquierda">
+            <h1>Growing ecommerce brands rely on Matcha.</h1>
+            <p>Are you tired of wasting time publishing blog article ...</p>
+            <button>Who uses Matcha?</button>
+            <div>
+                <img src="patrocinadores.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <div>
+                <img src="postwork.jpg" alt="">
+            </div>
+            <div class="cuerpo">
+                <h5>Everly</h5>
+                <h3>Early-Stage CPG Brand Increases </h3>
+                <p><i>Icono</i> 22% of...</p>
+                <button>See Case Study</button>
+            </div>
+        </div>
+
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

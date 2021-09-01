@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+
+}
+.container{
+    margin: 100px 500px;
+}
+.container-box{
+    background-color: gray;
+}
+.box{
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+.box .icon, .box h4, .box p{
+position: relative;
+}
+.box .background{
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    position: absolute;
+    top: 250px;
+    left: -100px;
+    border-radius: 50%;
+    transition: all 300ms;
+}
+.box:hover .background{
+    width: 400px;
+    height: 400px;
+    top: -80px;
+    left: -80px;
+}

@@ -1,0 +1,38 @@
+$color-fondo-cafe: #3D271F;
+$color-fondo-amarillo: #F7CA15;
+$color-verde: #4F6728;
+$color-naranja: #B95A40;
+$color-naranja2: #DF8D17;
+$color-texto: #ffffff;
+
+
+@mixin fondo {
+    background-image: url('../assets/fondo1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+@mixin menu {
+    margin: unset;
+    margin: 0;
+    background: unset;
+    background-color: $color-fondo-cafe;
+    color: $color-texto;
+    border-radius: 0px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+}
+
+
+@mixin footer {
+    background-image: url('../assets/fondo2.jpeg');
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-size: contain;
+    margin-top: 80px;
+    padding: 500px 0px;
+}
