@@ -9,13 +9,14 @@ USE adoptapet;
 
 /* Usuarios */
 CREATE TABLE usuarios(
-    id int not null AUTOINCREMENT,
+    id int not null AUTO_INCREMENT,
     username varchar(20),
     nombre varchar(30),
     apellido varchar(30),
     email varchar(30),
     password varchar(40),
-    tipo varchar(20)
+    tipo varchar(20),
+    CONSTRAINT idusuariosPK PRIMARY KEY (id)
 );
 
 INSERT (username, nombre, apellido, email, password, tipo) INTO usuarios VALUES(
@@ -24,4 +25,26 @@ INSERT (username, nombre, apellido, email, password, tipo) INTO usuarios VALUES(
 
 
 /* Mascotas */
-/* Solicitudes */
+CREATE TABLE mascotas(
+    id int not null AUTO_INCREMENT,
+    nombre varchar(30),
+    categoria varchar(20),
+    fotos varchar(50),
+    descripcion varchar(70),
+    anunciante varchar(40),
+    ubicacion varchar(40),
+    CONSTRAINT idusuariosPK PRIMARY KEY (id)
+);
+
+/* Solicitudes (id, idMascota, fechaDeCreacion, idUsuarioAnunciante, idUsuarioSolicitante, estado) */
+CREATE TABLE solicitudes(
+    id int not null AUTO_INCREMENT,
+    mascota varchar(30),
+    fechaDeCreacion date(20),
+    idUsuarioAnunciante int not null AUTO_INCREMENT,
+    idUsuarioSolicitante int not null AUTO_INCREMENT,
+    estado varchar(40),
+    CONSTRAINT idusuariosPK PRIMARY KEY (id),
+    CONSTRAINT idUsuariosanuncianteFK FOREING KEY (idUsuarioAnunciante) REFERENCES usuarios (id),
+    CONSTRAINT idusuariossolicitanteFK FOREING KEY (idUsuarioSolicitante) REFERENCES usuarios (id),
+);
