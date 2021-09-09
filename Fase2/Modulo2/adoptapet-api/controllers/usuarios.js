@@ -1,4 +1,5 @@
-const Usuario = require('../models/Usuario');
+const mongoose = require('mongoose');
+const Mascota = mongoose.model("Mascota");
 
 // CRUD
 function createUsuario(req, res) {

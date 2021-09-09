@@ -1,27 +1,63 @@
-const Mascota = require('../models/Mascota');
+const mongoose = require('mongoose');
+const Mascota = mongoose.model("Mascota");
 
 // CRUD
-function createMascota(req, res) {
+function createMascota(req, res, next) {
     const mascota = new Mascota(req.body);
-    res.status(200).send(mascota);
+    mascota.save().then(pet => {
+        res.status(200).send(pet);
+    }).catch(next);
 }
 
-function getMascotas(req, res) {
-    // Simulando dos mascotas y respondiendolos
-    var mascota1 = new Mascota(1, 'Pelichina', 'Perro', 'fotos', 'Blanca', 'anunciante', 'aqui');
-    var mascota2 = new Mascota(2, 'Pelusa', 'Gato', 'fotos', 'Tambien blanca', 'anunciante', 'alla');
-    res.send([mascota1,mascota2]);
+function getMascotas(req, res, next) {
+    if(req.params.id){// paso un id y solo regresa la mascota de ese id
+        Mascota.findById(req.params.id)
+        .then(pet => {res.send(pet)})
+        .catch(next);
+    }else{
+        Mascota.find()
+        .then(pets => res.send(pets))
+        .catch(next);
+    }
 }
 
-function updateMascota(req, res) {
-    var mascota = new Mascota(req.params.id, 'Pelusa', 'Gato', 'fotos', 'Tambien blanca', 'anunciante', 'alla');
-    const modificaciones = req.body;
-    mascota = {...mascota, ...modificaciones};
-    res.send(mascota);
+function updateMascota(req, res, next) {
+    Mascota.findById(req.params.id)
+    .then(pet => {
+        if(!pet){ return res.sendStatus(401);}
+        let nuevamascota = req.body;
+        if(typeof nuevamascota.nombre !== 'undefined')
+            mascota.nombre = nuevamascota.nombre;
+        if(typeof nuevamascota.categoria !== 'undefined')
+            mascota.categoria = nuevamascota.categoria;
+        if(typeof nuevamascota.fotos !== 'undefined')
+            mascota.fotos = nuevamascota.fotos;
+        if(typeof nuevamascota.descripcion !== 'undefined')
+            mascota.descripcion = nuevamascota.descripcion;
+        if(typeof nuevamascota.anuciante !== 'undefined')
+            mascota.anuciante = nuevamascota.anuciante;
+        if(typeof nuevamascota.ubicacion !== 'undefined')
+            mascota.ubicacion = nuevamascota.ubicacion;
+        pet.save()
+        .then(petupdated => res.status(200).json(petupdated.publicData))
+        .catch(next);
+    })
+    .catch(next);
+
+    // var mascota = new Mascota(req.params.id, 'Pelusa', 'Gato', 'fotos', 'Tambien blanca', 'anunciante', 'alla');
+    // const modificaciones = req.body;
+    // mascota = {...mascota, ...modificaciones};
+    // res.send(mascota);
 }
 
-function deleteMascota(req, res) {// se simula una eliminación de mascota, regresando un 200
-    res.status(200).send(`Mascota ${req.params.id} eliminado`);
+function deleteMascota(req, res, next) {
+    console.log('hola');
+    console.log(req.params.id);
+    
+    Mascota.findOneAndDelete({_id: req.params.id})
+    .then(eliminandoando => {
+        res.status(200).send(`Mascota ${req.params.id} ha sido eliminado: ${eliminandoando}`);
+    }).catch(next); //Quiuboles que? y tu mascota se escapó
 }
 
 // exportamos las funciones definidas
