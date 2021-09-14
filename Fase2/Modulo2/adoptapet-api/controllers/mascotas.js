@@ -51,13 +51,20 @@ function updateMascota(req, res, next) {
 }
 
 function deleteMascota(req, res, next) {
-    console.log('hola');
-    console.log(req.params.id);
-    
     Mascota.findOneAndDelete({_id: req.params.id})
     .then(eliminandoando => {
         res.status(200).send(`Mascota ${req.params.id} ha sido eliminado: ${eliminandoando}`);
     }).catch(next); //Quiuboles que? y tu mascota se escapó
+}
+
+function count(req, res, next) {
+    let categoria = req.params.cat;
+    Mascota.aggregate([
+        {'$match': { 'categoria': categoria}}, 
+        {'$count': 'total'}
+    ])
+    .then(total => res.status(200).send(total))
+    .catch(next);
 }
 
 // exportamos las funciones definidas
@@ -65,5 +72,6 @@ module.exports = {
     createMascota,
     getMascotas,
     updateMascota,
-    deleteMascota
+    deleteMascota,
+    count
 }

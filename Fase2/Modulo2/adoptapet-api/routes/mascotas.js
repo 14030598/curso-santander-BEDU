@@ -4,10 +4,12 @@ const {
     createMascota,
     getMascotas,
     updateMascota,
-    deleteMascota
+    deleteMascota,
+    count
 } = require('../controllers/mascotas')
   
 router.get('/', getMascotas);
+router.get('/count/:cat', count);
 router.get('/:id', getMascotas);
 router.post('/', createMascota);
 router.put('/:id', updateMascota);
