@@ -30,3 +30,4 @@ module.exports = {
 	modificarSolicitud,
 	eliminarSolicitud
 }
+
