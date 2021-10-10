@@ -8,7 +8,7 @@ const MascotaSchema = new mongoose.Schema({
   anunciante: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario'}, // contacto con la persona que anuncia al animalito
   ubicacion: { type: String }, // muy importante
   estado:{type: String, enum:['adoptado', 'disponible', 'pendiente']},
-}, { timestamps: true , collection : 'mascotas'})
+}, { timestamps: true , collection : 'Mascotas'})
 
 MascotaSchema.methods.publicData = function(){
   return {

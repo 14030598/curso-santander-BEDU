@@ -1,12 +1,9 @@
-// Usuario.js
+// Importacion de modulos
 const mongoose = require('mongoose');                         //Importando mongoose.
 const uniqueValidator = require("mongoose-unique-validator"); //Importando módulo mongoose-unique-validator, pendiente de instalar.
-const crypto = require('crypto');                             
-//Importando módulo crypto, pendiente de instalar.
-const jwt = require('jsonwebtoken');                          
-//Importando módulo jsonwebtoken, pendiente de instalar.
-const secret = require('../config').secret;                   
-// ???? es un misterio que resolveremos en la última sesión
+const crypto = require('crypto');                             //Importando módulo crypto
+const jwt = require('jsonwebtoken');                          //Importando módulo jsonwebtoken, pendiente de instalar.
+const secret = require('../config').secret;                   // ???? es un misterio que resolveremos en la última sesión
 
 
 

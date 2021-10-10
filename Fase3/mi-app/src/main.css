@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mesa{
+    display: flex;
+    margin: 150px auto auto auto;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 50rem;
+    height: 20rem;
+}
+
+.mantel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 184, 6);
+    margin: auto;
+    height: 8rem;
+    width: 13rem;
+}
+
+.plato{
+    background-color: white;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+.cubierto{
+    background-color: black;
+    margin: auto;
+    height: 6rem;
+    width: 1rem;
+}

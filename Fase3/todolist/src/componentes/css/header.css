@@ -1,0 +1,16 @@
+.header .nav{
+    display: flex;
+    justify-content: right;
+    background-color: teal;
+    color: wheat;
+    font-size: 1.3rem;
+}
+.header .nav > ul > li {
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+}
+.header h1{
+    text-align: center;
+    color: wheat;
+}

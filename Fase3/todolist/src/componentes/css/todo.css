@@ -1,0 +1,57 @@
+.tarea {
+    background-color: aliceblue;
+    color: rgb(142, 154, 163);
+    border-bottom: 1px solid rgb(175, 192, 182);
+    padding: 0 2rem;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.tarea.done {
+    background-color: rgb(224, 225, 226);
+}
+.tarea__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    transform: translateX(100px);
+    animation: nuevoItem 0.3s linear forwards;
+}
+.tarea__container > * {
+    padding: 0 1rem;
+}
+.tarea__estatus {
+    text-decoration: none;
+    cursor: pointer;
+    animation: explosion 0.3s linear forwards;
+}
+input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 4px teal;
+    background-color: teal;
+    padding: 1rem;
+    border:none;
+}
+.tarea__container.done {
+    color: rgb(214, 221, 226);
+}
+.tachar.done::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 0.3rem solid teal;
+    border-radius: 4px;
+    margin: 0 0 0 1rem;
+    transition: all 0.1s linear;
+    transform: translate(100px);
+    animation: nuevoItem 0.3s linear forwards;
+    
+}
+
+@keyframes nuevoItem {
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}

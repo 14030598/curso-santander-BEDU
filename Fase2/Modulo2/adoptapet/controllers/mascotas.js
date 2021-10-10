@@ -13,12 +13,15 @@ function crearMascota(req, res, next){
 
 function obtenerMascota(req, res, next){
 	if(req.params.id){
-    Mascota.findById(req.params.id).then(mascota => {
-	      res.send(mascota)
-	    }).catch(next)
+    Mascota.findById(req.params.id)
+    .then(mascota => {
+	      res.status(200).json(mascota.publicData())
+	  })
+    .catch(next)
   } else {
-    Mascota.find().then(mascotas => {
-      res.send(mascotas)
+    Mascota.find()
+    .then(mascotas => {
+        res.send(mascotas)
     }).catch(next)
   } 
 }
