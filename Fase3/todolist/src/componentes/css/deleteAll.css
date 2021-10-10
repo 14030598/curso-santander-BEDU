@@ -4,3 +4,6 @@
     margin-top: 1rem;
     cursor: pointer;
 }
+.delete > * {
+    margin: 0 1rem;
+}

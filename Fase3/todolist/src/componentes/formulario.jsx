@@ -5,8 +5,9 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 class Form extends React.Component {
     state = {
-        textFieldContent: "",
-        date: new Date().toLocaleString("en-US", { year: 'numeric', month: '2-digit', day: "2-digit" }),
+        TextField: "",
+        done: false,
+        fecha: new Date().toLocaleString("en-US", { year: 'numeric', month: '2-digit', day: "2-digit" }),
     };
 
     render() {
@@ -15,17 +16,27 @@ class Form extends React.Component {
                 <form className="formulario">
                     <label>Nueva tarea: </label>
                     <input type="text" placeholder="Ingrese"
-                        value={this.state.textFieldContent}
+                        value={this.state.TextField}
                         onChange={(e) => {
-                            this.setState({ textFieldContent: e.target.value });
+                            this.setState({ TextField: e.target.value });
                         }}
                     />
 
                     <button className="boton boton-form"
                         onClick={(e) => {
                             e.preventDefault();
-                            this.props.onSubmit([this.state.textFieldContent, this.state.date]);
-                            this.setState({ textFieldContent: "" });
+                            if (this.state.TextField !== "") {
+                                this.props.onSubmit({
+                                    descripcion: this.state.TextField,
+                                    fecha: this.state.fecha,
+                                    done: this.state.done
+                                });
+                                this.setState({ TextField: "" });
+                            } else {
+                                alert('La tarea no puede estar vacia');
+                            }
+
+
                         }}
                     >
                         <FontAwesomeIcon icon={faPaperPlane} size="2x" color="teal" />

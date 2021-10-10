@@ -1,4 +1,4 @@
-import './css/header.css';
+import './css/header.scss';
 
 const Header = (props) => {
     return (
@@ -10,7 +10,10 @@ const Header = (props) => {
                     <li>Contacto</li>
                 </ul>
             </nav>
-            <h1>Hay {props.total} tareas</h1>
+            {
+                props.total > 0 ? <h1>Hay {props.total} tareas, {props.done} completadas y {props.pending} pendientes </h1> : <h1> No hay tareas que mostrar</h1>
+            }
+
         </section>
     );
 };
