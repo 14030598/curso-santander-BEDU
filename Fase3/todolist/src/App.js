@@ -6,12 +6,11 @@ import TodoList from './componentes/ToDoList';
 import DeleteAll from './componentes/deleteAll';
 import Header from './componentes/Header';
 const hoy = new Date().toLocaleString("en-US", { year: 'numeric', month: '2-digit', day: "2-digit" });
-const estado = false; //false= todo, true=done
 
 class App extends React.Component {
     state = {
-        tareas: [{ descripcion: 'Tarea 1', fecha: hoy, done: estado },
-        { descripcion: 'Tarea 2', fecha: hoy, done: estado }]
+        tareas: [{ descripcion: 'Tarea 1', fecha: hoy, done: false },
+        { descripcion: 'Tarea 2', fecha: hoy, done: false }]
     };
     createToDo(nuevaTarea) {
         this.setState({ tareas: [...this.state.tareas, nuevaTarea] });

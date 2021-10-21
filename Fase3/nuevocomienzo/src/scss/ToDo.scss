@@ -1,0 +1,19 @@
+.todo__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // transition: all 0.5s ease-in;
+    .todo__title.hide {
+        text-decoration-color: red;
+        text-decoration-line: line-through;
+        text-decoration-style: wavy;
+        span {
+            color: rgb(131, 43, 43);
+        }
+    }
+    .todo__actions {
+        flex-grow: 1;
+        margin: 0 1rem;
+        text-align: right;
+    }
+}

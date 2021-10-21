@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "id": 1634828183168,
+      "title": "Sesión 1 (JSX)",
+      "done": true
+    },
+    {
+      "id": 1634828212338,
+      "title": "Sesión 2 (Estado y propiedades)",
+      "done": false
+    },
+    {
+      "id": 1634828212339,
+      "title": "Sesión 3 (Ciclo de vida)",
+      "done": false
+    },
+    {
+      "id": 1634828212340,
+      "title": "Sesión 4 (Hooks)",
+      "done": false
+    },
+    {
+      "id": 1634828212341,
+      "title": "Sesión 5 (Hooks)",
+      "done": false
+    },
+    {
+      "id": 1634828212342,
+      "title": "Sesión 6 (Rutas)",
+      "done": false
+    },
+    {
+      "id": 1634828212343,
+      "title": "Sesión 7",
+      "done": false
+    },
+    {
+      "id": 1634828212344,
+      "title": "Sesión 8",
+      "done": false
+    }
+  ]
+}
