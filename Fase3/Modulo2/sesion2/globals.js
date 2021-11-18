@@ -1,0 +1,11 @@
+console.log("---------exports-----------");
+console.log(exports);
+console.log("---------module-----------");
+console.log(module);
+console.log("---------require-----------");
+console.log(require);
+console.log("---------dirname-----------");
+console.log(__dirname);
+console.log("-----------filename---------");
+console.log(__filename);
+console.log("--------------------");

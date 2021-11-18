@@ -1,0 +1,12 @@
+{
+  "name": "sesion2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "env": "export NOMBRE='Luis Manuel'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
