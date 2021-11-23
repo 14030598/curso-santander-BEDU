@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "username": "luismanuel"
+    },
+    {
+      "username": "Pepe Aguilar",
+      "profesion": "cantante",
+      "nacionalidad": "Mexicana",
+      "createdAt": 1637638585340,
+      "id": "Q4_B0kF2vP_qIlCIfuTMC"
+    }
+  ]
+}
